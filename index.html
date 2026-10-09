@@ -3,20 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elite Club — EMSI CFC</title>
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <title>Elite Club — EMSI Casablanca</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="lang-fr">
 
   <!-- ============================================================
        NAVBAR
@@ -24,23 +19,30 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo">
-        <img src="images/logo.png" alt="Elite Club Logo" class="logo-img">
+        <span class="logo-icon">⚜</span>
+        <span class="logo-text">Elite<span class="gold">Club</span></span>
       </a>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À Propos</a></li>
-        <li><a href="#poles">Nos Pôles</a></li>
-        <li><a href="#events">Événements</a></li>
-        <li><a href="#achievements">Réalisations</a></li>
-        <li><a href="#board">Bureau</a></li>
-        <li><a href="#partners">Partenaires</a></li>
-        <li><a href="#join">Rejoindre</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"    data-i18n="nav_home">Accueil</a></li>
+        <li><a href="#about"   data-i18n="nav_about">À Propos</a></li>
+        <li><a href="#poles"   data-i18n="nav_poles">Nos Pôles</a></li>
+        <li><a href="#events"  data-i18n="nav_events">Événements</a></li>
+        <li><a href="#achievements" data-i18n="nav_ach">Réalisations</a></li>
+        <li><a href="#board"   data-i18n="nav_board">Bureau</a></li>
+        <li><a href="#partners" data-i18n="nav_partners">Partenaires</a></li>
+        <li><a href="#join"    data-i18n="nav_join">Rejoindre</a></li>
+        <li><a href="#faq"     data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
 
-      <button class="nav-cta" onclick="scrollToSection('join')">Rejoindre le Club</button>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <i class="fas fa-globe"></i> <span id="langLabel">EN</span>
+        </button>
+        <button class="nav-cta" onclick="scrollToSection('join')" data-i18n="nav_cta">Rejoindre le Club</button>
+      </div>
+
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -55,35 +57,25 @@
     <div class="hero-particles" id="particles"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">EMSI CFC — Club Officiel</div>
-      <div class="hero-logo-symbol">
-        <img src="images/logo.png" alt="Elite Club Logo" class="hero-logo-img">
-      </div>
+      <div class="hero-logo-symbol">⚜</div>
       <h1 class="hero-title">Elite <span class="gold">Club</span></h1>
-      <p class="hero-slogan">"You are not just a club member, you're an ELITE"</p>
-      <p class="hero-subtitle">
-        Un espace d'excellence, de croissance et d'appartenance pour les étudiants de l'EMSI CFC.
+      <p class="hero-slogan">"Your first day with us will never be the last"</p>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">
+        Un espace d'excellence, de croissance et d'appartenance pour les étudiants de l'EMSI Casablanca.
         Rejoignez une communauté qui transforme des ambitions en réalisations.
       </p>
       <div class="hero-buttons">
         <button class="btn-primary" onclick="scrollToSection('join')">
-          <i class="fas fa-star"></i> Rejoindre le Club
+          <i class="fas fa-star"></i> <span data-i18n="hero_cta">Rejoindre le Club</span>
         </button>
         <button class="btn-secondary" onclick="scrollToSection('about')">
-          Découvrir <i class="fas fa-arrow-right"></i>
+          <span data-i18n="hero_discover">Découvrir</span> <i class="fas fa-arrow-right"></i>
         </button>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Membres</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Événements</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Partenaires</span></div>
       </div>
     </div>
 
     <div class="hero-scroll-hint" onclick="scrollToSection('about')">
-      <span>Défiler</span>
+      <span data-i18n="hero_scroll">Défiler</span>
       <i class="fas fa-chevron-down"></i>
     </div>
   </section>
@@ -94,24 +86,24 @@
   <section id="about" class="section about-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Qui sommes-nous</span>
-        <h2 class="section-title">À <span class="gold">Propos</span> de Nous</h2>
+        <span class="section-tag" data-i18n="about_tag">Qui sommes-nous</span>
+        <h2 class="section-title"><span data-i18n="about_title">À</span> <span class="gold" data-i18n="about_title_gold">Propos</span> <span data-i18n="about_title2">de Nous</span></h2>
         <div class="gold-divider"></div>
       </div>
 
       <div class="about-grid">
         <div class="about-text">
           <p class="about-intro">
-            L'<strong class="gold">Elite Club</strong> est le club officiel de l'<strong>EMSI CFC</strong>,
+            L'<strong class="gold">Elite Club</strong> <span data-i18n="about_intro">est le club officiel de l'<strong>EMSI Casablanca</strong>,
             un espace conçu pour les étudiants ambitieux qui souhaitent dépasser les limites
-            de leur parcours académique.
+            de leur parcours académique.</span>
           </p>
-          <p>
+          <p data-i18n="about_p1">
             Fondé sur des valeurs d'excellence, de solidarité et d'innovation, le club offre
             un environnement stimulant où chaque membre développe ses compétences professionnelles,
             son leadership et son réseau.
           </p>
-          <p>
+          <p data-i18n="about_p2">
             Nous croyons que la réussite se construit au-delà des cours magistraux — à travers
             des projets concrets, des rencontres inspirantes et des défis qui forgent le caractère.
           </p>
@@ -119,41 +111,46 @@
           <div class="values-grid">
             <div class="value-card">
               <div class="value-icon"><i class="fas fa-crown"></i></div>
-              <h4>Excellence</h4>
-              <p>Viser le meilleur dans chaque initiative.</p>
+              <h4 data-i18n="val1_title">Excellence</h4>
+              <p data-i18n="val1_desc">Viser le meilleur dans chaque initiative.</p>
             </div>
             <div class="value-card">
               <div class="value-icon"><i class="fas fa-handshake"></i></div>
-              <h4>Solidarité</h4>
-              <p>Grandir ensemble, réussir ensemble.</p>
+              <h4 data-i18n="val2_title">Solidarité</h4>
+              <p data-i18n="val2_desc">Grandir ensemble, réussir ensemble.</p>
             </div>
             <div class="value-card">
               <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-              <h4>Innovation</h4>
-              <p>Repousser les frontières du possible.</p>
+              <h4 data-i18n="val3_title">Innovation</h4>
+              <p data-i18n="val3_desc">Repousser les frontières du possible.</p>
             </div>
             <div class="value-card">
               <div class="value-icon"><i class="fas fa-users"></i></div>
-              <h4>Appartenance</h4>
-              <p>Une famille, une identité, un club.</p>
+              <h4 data-i18n="val4_title">Appartenance</h4>
+              <p data-i18n="val4_desc">Une famille, une identité, un club.</p>
             </div>
           </div>
         </div>
 
         <div class="about-visual">
           <div class="about-card-main">
-            <div class="about-card-symbol">⚜</div>
-            <h3>Notre Mission</h3>
-            <p>
-              Créer un écosystème estudiantin d'élite qui prépare les futurs leaders
-              marocains et internationaux au monde professionnel.
+            <!-- Official Club Logo -->
+            <div class="about-logo-wrap">
+              <img src="images/logo.png" alt="Elite Club Logo" class="about-club-logo"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <span class="about-card-symbol-fallback" style="display:none;">⚜</span>
+            </div>
+            <h3 data-i18n="mission_title">Notre Mission</h3>
+            <p data-i18n="mission_text">
+              L'Elite Club est un espace dédié au développement personnel, au leadership et au débat.
+              Notre objectif est d'aider les étudiants à acquérir les compétences indispensables pour
+              leur parcours et leur future vie professionnelle à travers des formations, soft skills,
+              séminaires "Success stories" et actions citoyennes.
             </p>
           </div>
           <div class="about-card-accent">
             <i class="fas fa-quote-left gold"></i>
-            <p class="quote-text">
-              "You're not just a club member, you're an ELITE."
-            </p>
+            <p class="quote-text">"Your first day with us will never be the last."</p>
           </div>
         </div>
       </div>
@@ -166,10 +163,10 @@
   <section id="poles" class="section poles-section dark-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Nos Départements</span>
-        <h2 class="section-title">Nos <span class="gold">Pôles</span> & Activités</h2>
+        <span class="section-tag" data-i18n="poles_tag">Nos Départements</span>
+        <h2 class="section-title"><span data-i18n="poles_title">Nos</span> <span class="gold" data-i18n="poles_title_gold">Pôles</span> <span data-i18n="poles_title2">& Activités</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="poles_sub">
           Six pôles d'expertise pour couvrir toutes les dimensions de votre développement personnel et professionnel.
         </p>
       </div>
@@ -177,56 +174,39 @@
       <div class="poles-grid">
         <div class="pole-card" data-delay="0">
           <div class="pole-icon"><i class="fas fa-palette"></i></div>
-          <h3>Pôle Design & Médias</h3>
-          <p>Création graphique, identité visuelle, production vidéo et gestion des réseaux sociaux du club.</p>
-          <div class="pole-tags">
-            <span>Graphisme</span><span>Vidéo</span><span>Social Media</span>
-          </div>
+          <h3 data-i18n="pole1_title">Pôle Design & Médias</h3>
+          <p data-i18n="pole1_desc">Création graphique, identité visuelle, production vidéo et gestion des réseaux sociaux du club.</p>
+          <div class="pole-tags"><span>Graphisme</span><span>Vidéo</span><span>Social Media</span></div>
         </div>
-
         <div class="pole-card" data-delay="100">
           <div class="pole-icon"><i class="fas fa-calendar-alt"></i></div>
-          <h3>Pôle Logistique & Événements</h3>
-          <p>Organisation et coordination de tous les événements, forums et activités du club.</p>
-          <div class="pole-tags">
-            <span>Organisation</span><span>Coordination</span><span>Événementiel</span>
-          </div>
+          <h3 data-i18n="pole2_title">Pôle Logistique & Événements</h3>
+          <p data-i18n="pole2_desc">Organisation et coordination de tous les événements, forums et activités du club.</p>
+          <div class="pole-tags"><span>Organisation</span><span>Coordination</span><span>Événementiel</span></div>
         </div>
-
         <div class="pole-card" data-delay="200">
           <div class="pole-icon"><i class="fas fa-brain"></i></div>
-          <h3>Pôle Soft Skills</h3>
-          <p>Ateliers de prise de parole, leadership, intelligence émotionnelle et développement personnel.</p>
-          <div class="pole-tags">
-            <span>Leadership</span><span>Communication</span><span>Coaching</span>
-          </div>
+          <h3 data-i18n="pole3_title">Pôle Soft Skills</h3>
+          <p data-i18n="pole3_desc">Ateliers de prise de parole, leadership, intelligence émotionnelle et développement personnel.</p>
+          <div class="pole-tags"><span>Leadership</span><span>Communication</span><span>Coaching</span></div>
         </div>
-
         <div class="pole-card" data-delay="300">
           <div class="pole-icon"><i class="fas fa-briefcase"></i></div>
-          <h3>Pôle Relations Externes</h3>
-          <p>Gestion des partenariats avec des entreprises, institutions et autres clubs universitaires.</p>
-          <div class="pole-tags">
-            <span>Networking</span><span>Partenariats</span><span>Relations</span>
-          </div>
+          <h3 data-i18n="pole4_title">Pôle Relations Externes</h3>
+          <p data-i18n="pole4_desc">Gestion des partenariats avec des entreprises, institutions et autres clubs universitaires.</p>
+          <div class="pole-tags"><span>Networking</span><span>Partenariats</span><span>Relations</span></div>
         </div>
-
         <div class="pole-card" data-delay="400">
-          <div class="pole-icon"><i class="fas fa-code"></i></div>
-          <h3>Pôle Tech & Innovation</h3>
-          <p>Hackathons, projets tech, ateliers de développement et veille technologique.</p>
-          <div class="pole-tags">
-            <span>Tech</span><span>Hackathon</span><span>Innovation</span>
-          </div>
+          <div class="pole-icon"><i class="fas fa-heart"></i></div>
+          <h3 data-i18n="pole5_title">Pôle Actions Humanitaires</h3>
+          <p data-i18n="pole5_desc">Initiatives citoyennes, actions solidaires et engagement social au sein et au-delà du campus.</p>
+          <div class="pole-tags"><span>Solidarité</span><span>Citoyenneté</span><span>Impact</span></div>
         </div>
-
         <div class="pole-card" data-delay="500">
-          <div class="pole-icon"><i class="fas fa-chart-line"></i></div>
-          <h3>Pôle Business & Entrepreneuriat</h3>
-          <p>Compétitions, business plans, simulations d'entreprise et mentorat entrepreneurial.</p>
-          <div class="pole-tags">
-            <span>Business</span><span>Startup</span><span>Entrepreneuriat</span>
-          </div>
+          <div class="pole-icon"><i class="fas fa-users-cog"></i></div>
+          <h3 data-i18n="pole6_title">Pôle RH & Vie Associative</h3>
+          <p data-i18n="pole6_desc">Gestion des membres, recrutement, animation de la communauté et vie interne du club.</p>
+          <div class="pole-tags"><span>RH</span><span>Communauté</span><span>Vie Associative</span></div>
         </div>
       </div>
     </div>
@@ -238,74 +218,29 @@
   <section id="events" class="section events-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Agenda</span>
-        <h2 class="section-title">Événements & <span class="gold">Agenda</span></h2>
+        <span class="section-tag" data-i18n="events_tag">Agenda</span>
+        <h2 class="section-title"><span data-i18n="events_title">Événements &</span> <span class="gold" data-i18n="events_title_gold">Agenda</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">Restez connectés aux prochaines activités, forums et ateliers de l'Elite Club.</p>
+        <p class="section-subtitle" data-i18n="events_sub">Restez connectés aux prochaines activités et forums de l'Elite Club.</p>
       </div>
 
-      <div class="events-grid">
+      <div class="events-grid events-single">
         <div class="event-card featured">
-          <div class="event-badge">À venir</div>
+          <div class="event-badge" data-i18n="event_badge">À venir</div>
           <div class="event-date-box">
             <span class="event-day">15</span>
             <span class="event-month">Nov</span>
           </div>
           <div class="event-info">
-            <span class="event-category"><i class="fas fa-microphone"></i> Forum</span>
-            <h3>Forum Carrières & Networking 2026</h3>
-            <p>Rencontrez des professionnels de renom, explorez les opportunités de stage et d'emploi, et développez votre réseau.</p>
+            <span class="event-category"><i class="fas fa-microphone"></i> <span data-i18n="event_cat">Forum</span></span>
+            <h3 data-i18n="event1_title">Le Forum</h3>
+            <p data-i18n="event1_desc">
+              Le grand rendez-vous de l'Elite Club — un forum de networking, de partage et d'inspiration
+              où étudiants, professionnels et partenaires se réunissent pour construire ensemble.
+            </p>
             <div class="event-meta">
-              <span><i class="fas fa-map-marker-alt"></i> EMSI CFC – Amphithéâtre</span>
-              <span><i class="fas fa-clock"></i> 09h00 – 17h00</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date-box">
-            <span class="event-day">22</span>
-            <span class="event-month">Nov</span>
-          </div>
-          <div class="event-info">
-            <span class="event-category"><i class="fas fa-chalkboard-teacher"></i> Atelier</span>
-            <h3>Workshop: Leadership & Prise de Parole</h3>
-            <p>Atelier intensif animé par des coachs certifiés pour développer votre confiance en public.</p>
-            <div class="event-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Salle B204</span>
-              <span><i class="fas fa-clock"></i> 14h00 – 17h00</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date-box">
-            <span class="event-day">05</span>
-            <span class="event-month">Déc</span>
-          </div>
-          <div class="event-info">
-            <span class="event-category"><i class="fas fa-laptop-code"></i> Hackathon</span>
-            <h3>Elite Hackathon 2026</h3>
-            <p>48 heures d'innovation intensive. Formez vos équipes et proposez des solutions tech innovantes.</p>
-            <div class="event-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Campus EMSI CFC</span>
-              <span><i class="fas fa-clock"></i> 48h non-stop</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date-box">
-            <span class="event-day">20</span>
-            <span class="event-month">Déc</span>
-          </div>
-          <div class="event-info">
-            <span class="event-category"><i class="fas fa-trophy"></i> Gala</span>
-            <h3>Cérémonie de Clôture & Awards Night</h3>
-            <p>Célébration de fin d'année, remise des prix et reconnaissance des membres les plus actifs.</p>
-            <div class="event-meta">
-              <span><i class="fas fa-map-marker-alt"></i> EMSI CFC – Grande Salle</span>
-              <span><i class="fas fa-clock"></i> 18h00 – 23h00</span>
+              <span><i class="fas fa-map-marker-alt"></i> EMSI Casablanca</span>
+              <span><i class="fas fa-clock"></i> <span data-i18n="event1_time">À confirmer</span></span>
             </div>
           </div>
         </div>
@@ -319,80 +254,24 @@
   <section id="achievements" class="section achievements-section dark-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Notre Parcours</span>
-        <h2 class="section-title">Nos <span class="gold">Réalisations</span></h2>
+        <span class="section-tag" data-i18n="ach_tag">Notre Parcours</span>
+        <h2 class="section-title"><span data-i18n="ach_title">Nos</span> <span class="gold" data-i18n="ach_title_gold">Réalisations</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">Un bilan de nos succès, projets marquants et moments forts.</p>
+        <p class="section-subtitle" data-i18n="ach_sub">Les premiers pas d'une grande aventure.</p>
       </div>
 
-      <div class="achievements-timeline">
+      <div class="achievements-timeline achievements-single">
         <div class="timeline-item left">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <div class="timeline-year">2024</div>
+            <div class="timeline-year">Octobre 2026</div>
             <div class="timeline-icon"><i class="fas fa-flag"></i></div>
-            <h3>Fondation de l'Elite Club</h3>
-            <p>Création officielle du club avec 30 membres fondateurs. Lancement de la première identité visuelle et des premiers statuts.</p>
+            <h3 data-i18n="ach1_title">Fondation de l'Elite Club</h3>
+            <p data-i18n="ach1_desc">
+              Création officielle de l'Elite Club à l'EMSI Casablanca. Le lancement d'une communauté
+              dédiée au développement personnel, au leadership et au débat étudiant.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-icon"><i class="fas fa-handshake"></i></div>
-            <h3>Premier Forum Partenariat</h3>
-            <p>Organisation du premier forum de networking réunissant plus de 15 entreprises et 200 étudiants de l'EMSI CFC.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-icon"><i class="fas fa-medal"></i></div>
-            <h3>Prix du Meilleur Club Étudiant</h3>
-            <p>Distinction officielle par la direction de l'EMSI CFC pour l'excellence des initiatives et l'impact sur la communauté estudiantine.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
-            <h3>Lancement du Programme Mentorat</h3>
-            <p>Mise en place d'un programme de mentorat reliant 50 étudiants juniors à des alumni et professionnels du secteur.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2026</div>
-            <div class="timeline-icon"><i class="fas fa-globe"></i></div>
-            <h3>Expansion & 200+ Membres</h3>
-            <p>Franchissement du cap des 200 membres actifs, élargissement des pôles et ouverture de collaborations inter-campus.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="achievements-numbers">
-        <div class="ach-num-card">
-          <span class="ach-num">200+</span>
-          <span class="ach-label">Membres Actifs</span>
-        </div>
-        <div class="ach-num-card">
-          <span class="ach-num">50+</span>
-          <span class="ach-label">Événements Organisés</span>
-        </div>
-        <div class="ach-num-card">
-          <span class="ach-num">15+</span>
-          <span class="ach-label">Entreprises Partenaires</span>
-        </div>
-        <div class="ach-num-card">
-          <span class="ach-num">3</span>
-          <span class="ach-label">Prix & Distinctions</span>
         </div>
       </div>
     </div>
@@ -404,38 +283,41 @@
   <section id="board" class="section board-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Notre Équipe</span>
-        <h2 class="section-title">Le Bureau <span class="gold">Exécutif</span></h2>
+        <span class="section-tag" data-i18n="board_tag">Notre Équipe</span>
+        <h2 class="section-title"><span data-i18n="board_title">Le Bureau</span> <span class="gold" data-i18n="board_title_gold">Exécutif</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">Les visionnaires qui ont fondé et qui pilotent l'Elite Club.</p>
+        <p class="section-subtitle" data-i18n="board_sub">Les visionnaires qui fondent et pilotent l'Elite Club.</p>
       </div>
 
       <div class="board-grid">
+
+        <!-- PRÉSIDENTE — Featured -->
         <div class="board-card president">
           <div class="board-avatar">
             <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
-            <div class="board-badge-role">Président</div>
+            <div class="board-badge-role">Présidente</div>
           </div>
           <div class="board-info">
-            <h3>[Nom du Président]</h3>
-            <p class="board-role">Président Fondateur</p>
-            <p class="board-dept">Direction Générale & Vision Stratégique</p>
+            <h3>Chahd Rafih</h3>
+            <p class="board-role">Présidente</p>
+            <p class="board-dept" data-i18n="board_pres_dept">Direction Générale & Vision Stratégique</p>
             <div class="board-socials">
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
 
+        <!-- ROW 2 -->
         <div class="board-card">
           <div class="board-avatar">
             <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
             <div class="board-badge-role">VP</div>
           </div>
           <div class="board-info">
-            <h3>[Vice-Président(e)]</h3>
-            <p class="board-role">Vice-Président(e)</p>
-            <p class="board-dept">Coordination Interne & Opérations</p>
+            <h3>Wiam Fakkar</h3>
+            <p class="board-role">Vice-Présidente</p>
+            <p class="board-dept" data-i18n="board_vp_dept">Coordination Interne & Opérations</p>
             <div class="board-socials">
               <a href="#"><i class="fab fa-linkedin"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
@@ -449,9 +331,9 @@
             <div class="board-badge-role">SG</div>
           </div>
           <div class="board-info">
-            <h3>[Secrétaire Général(e)]</h3>
-            <p class="board-role">Secrétaire Général(e)</p>
-            <p class="board-dept">Administration & Documentation</p>
+            <h3>Aya Maid</h3>
+            <p class="board-role">Secrétaire Générale</p>
+            <p class="board-dept" data-i18n="board_sg_dept">Administration & Documentation</p>
             <div class="board-socials">
               <a href="#"><i class="fab fa-linkedin"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
@@ -465,9 +347,26 @@
             <div class="board-badge-role">Tréso</div>
           </div>
           <div class="board-info">
-            <h3>[Trésorier(e)]</h3>
-            <p class="board-role">Trésorier(e)</p>
-            <p class="board-dept">Gestion Financière & Budget</p>
+            <h3>Ayoub Marsani</h3>
+            <p class="board-role">Trésorier</p>
+            <p class="board-dept" data-i18n="board_treso_dept">Gestion Financière & Budget</p>
+            <div class="board-socials">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="board-card">
+          <div class="board-avatar">
+            <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+            <div class="board-badge-role">Part.</div>
+          </div>
+          <div class="board-info">
+            <h3>Mchater & Marwan</h3>
+            <p class="board-role">Partenariats & Ext.</p>
+            <p class="board-dept" data-i18n="board_part_dept">Relations Extérieures & Partenariats</p>
             <div class="board-socials">
               <a href="#"><i class="fab fa-linkedin"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
@@ -478,12 +377,12 @@
         <div class="board-card">
           <div class="board-avatar">
             <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
-            <div class="board-badge-role">RP</div>
+            <div class="board-badge-role">Évén.</div>
           </div>
           <div class="board-info">
-            <h3>[Responsable Com.]</h3>
-            <p class="board-role">Responsable Communication</p>
-            <p class="board-dept">Design, Médias & Réseaux Sociaux</p>
+            <h3>Badssi & Ikrame</h3>
+            <p class="board-role">Événements & Logistique</p>
+            <p class="board-dept" data-i18n="board_event_dept">Organisation & Coordination Événementielle</p>
             <div class="board-socials">
               <a href="#"><i class="fab fa-linkedin"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
@@ -494,18 +393,101 @@
         <div class="board-card">
           <div class="board-avatar">
             <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
-            <div class="board-badge-role">RE</div>
+            <div class="board-badge-role">Com.</div>
           </div>
           <div class="board-info">
-            <h3>[Resp. Événements]</h3>
-            <p class="board-role">Responsable Événements</p>
-            <p class="board-dept">Logistique & Organisation</p>
+            <h3>Hamza Hssain</h3>
+            <p class="board-role">Design & Communication</p>
+            <p class="board-dept" data-i18n="board_design_dept">Identité Visuelle & Médias</p>
             <div class="board-socials">
               <a href="#"><i class="fab fa-linkedin"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
+
+        <!-- ROW 4 -->
+        <div class="board-card">
+          <div class="board-avatar">
+            <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+            <div class="board-badge-role">Hum.</div>
+          </div>
+          <div class="board-info">
+            <h3>Khadija Errabi</h3>
+            <p class="board-role">Actions Humanitaires</p>
+            <p class="board-dept" data-i18n="board_hum_dept">Initiatives Citoyennes & Solidarité</p>
+            <div class="board-socials">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="board-card">
+          <div class="board-avatar">
+            <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+            <div class="board-badge-role">CM</div>
+          </div>
+          <div class="board-info">
+            <h3>Romaissae Ridouani</h3>
+            <p class="board-role">Community Management</p>
+            <p class="board-dept" data-i18n="board_cm_dept">Réseaux Sociaux & Engagement Digital</p>
+            <div class="board-socials">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="board-card">
+          <div class="board-avatar">
+            <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+            <div class="board-badge-role">RH</div>
+          </div>
+          <div class="board-info">
+            <h3>Aboulhilal & Mensour</h3>
+            <p class="board-role">RH & Vie Associative</p>
+            <p class="board-dept" data-i18n="board_rh_dept">Gestion des Membres & Animation Interne</p>
+            <div class="board-socials">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div class="board-card">
+          <div class="board-avatar">
+            <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+            <div class="board-badge-role">Photo</div>
+          </div>
+          <div class="board-info">
+            <h3>Salma Filali</h3>
+            <p class="board-role">Photographer & Editing</p>
+            <p class="board-dept" data-i18n="board_photo_dept">Photographie & Post-Production</p>
+            <div class="board-socials">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="board-card board-card--conseiller">
+          <div class="board-avatar">
+            <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+            <div class="board-badge-role">Cons.</div>
+          </div>
+          <div class="board-info">
+            <h3>Rayan Samir Youssef</h3>
+            <p class="board-role">Conseiller</p>
+            <p class="board-dept" data-i18n="board_cons_dept">Conseil Stratégique & Orientation</p>
+            <div class="board-socials">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -516,67 +498,51 @@
   <section id="partners" class="section partners-section dark-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Nos Partenaires</span>
-        <h2 class="section-title">Ils nous font <span class="gold">Confiance</span></h2>
+        <span class="section-tag" data-i18n="partners_tag">Nos Partenaires</span>
+        <h2 class="section-title"><span data-i18n="partners_title">Ils nous font</span> <span class="gold" data-i18n="partners_title_gold">Confiance</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">Des institutions et entreprises qui soutiennent notre vision d'excellence.</p>
+        <p class="section-subtitle" data-i18n="partners_sub">Des institutions et organisations qui soutiennent notre vision d'excellence.</p>
       </div>
 
+      <!-- EMSI Casablanca — Main -->
       <div class="partners-tier">
-        <h3 class="partners-tier-title"><span class="gold">⚜</span> Partenaire Principal</h3>
+        <h3 class="partners-tier-title"><span class="gold">⚜</span> <span data-i18n="partner_main_label">Établissement d'accueil</span></h3>
         <div class="partner-main-card">
           <div class="partner-logo-placeholder main">
             <i class="fas fa-university"></i>
-            <span>EMSI CFC</span>
+            <span>EMSI</span>
           </div>
           <div class="partner-main-desc">
-            <h4>EMSI CFC — École Marocaine des Sciences de l'Ingénieur</h4>
-            <p>Notre école partenaire et maison-mère, qui soutient et encadre les activités de l'Elite Club au sein de son campus.</p>
+            <h4>EMSI Casablanca</h4>
+            <p data-i18n="partner_emsi_desc">Notre école partenaire et maison-mère, qui soutient et encadre les activités de l'Elite Club au sein de son campus.</p>
           </div>
         </div>
       </div>
 
+      <!-- Annokhbaatcd -->
       <div class="partners-tier">
-        <h3 class="partners-tier-title"><span class="gold">★</span> Partenaires Institutionnels & Entreprises</h3>
-        <div class="partners-logos-grid">
+        <h3 class="partners-tier-title"><span class="gold">★</span> <span data-i18n="partner_inst_label">Partenaires</span></h3>
+        <div class="partners-logos-grid partners-logos-centered">
           <div class="partner-logo-card">
-            <div class="partner-logo-placeholder">
-              <i class="fas fa-building"></i>
-            </div>
-            <p>Partenaire 1</p>
-          </div>
-          <div class="partner-logo-card">
-            <div class="partner-logo-placeholder">
-              <i class="fas fa-building"></i>
-            </div>
-            <p>Partenaire 2</p>
-          </div>
-          <div class="partner-logo-card">
-            <div class="partner-logo-placeholder">
-              <i class="fas fa-building"></i>
-            </div>
-            <p>Partenaire 3</p>
-          </div>
-          <div class="partner-logo-card">
-            <div class="partner-logo-placeholder">
-              <i class="fas fa-building"></i>
-            </div>
-            <p>Partenaire 4</p>
-          </div>
-          <div class="partner-logo-card">
-            <div class="partner-logo-placeholder">
-              <i class="fas fa-building"></i>
-            </div>
-            <p>Partenaire 5</p>
-          </div>
-          <div class="partner-logo-card">
-            <div class="partner-logo-placeholder add-partner">
-              <i class="fas fa-plus"></i>
-            </div>
-            <p>Devenir Partenaire</p>
+            <a href="https://www.instagram.com/annokhbaatcd?dlrf=ZTlxaXBlOHV1bTcw"
+               target="_blank" rel="noopener noreferrer"
+               class="partner-logo-link"
+               aria-label="Annokhbaatcd Instagram">
+              <div class="partner-logo-img-wrap">
+                <img src="images/anokhba.png"
+                     alt="Annokhbaatcd"
+                     class="partner-real-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="partner-logo-placeholder partner-fallback" style="display:none;">
+                  <i class="fas fa-building"></i>
+                </div>
+              </div>
+              <p>Annokhbaatcd</p>
+            </a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -586,59 +552,55 @@
   <section id="join" class="section join-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Candidature</span>
-        <h2 class="section-title">Rejoindre l'<span class="gold">Elite Club</span></h2>
+        <span class="section-tag" data-i18n="join_tag">Candidature</span>
+        <h2 class="section-title"><span data-i18n="join_title">Rejoindre l'</span><span class="gold">Elite Club</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="join_sub">
           Remplissez ce formulaire pour soumettre votre candidature. Bienvenue dans l'élite.
         </p>
       </div>
 
       <div class="join-wrapper">
         <div class="join-perks">
-          <h3>Pourquoi nous rejoindre ?</h3>
+          <h3 data-i18n="perks_title">Pourquoi nous rejoindre ?</h3>
           <ul class="perks-list">
-            <li><i class="fas fa-check-circle gold"></i> Accès à des événements et ateliers exclusifs</li>
-            <li><i class="fas fa-check-circle gold"></i> Réseau de professionnels et d'alumni</li>
-            <li><i class="fas fa-check-circle gold"></i> Développement de vos soft skills & leadership</li>
-            <li><i class="fas fa-check-circle gold"></i> Expériences et projets valorisables sur votre CV</li>
-            <li><i class="fas fa-check-circle gold"></i> Communauté soudée et bienveillante</li>
-            <li><i class="fas fa-check-circle gold"></i> Certifications et reconnaissances officielles</li>
+            <li><i class="fas fa-check-circle gold"></i> <span data-i18n="perk1">Accès à des événements et ateliers exclusifs</span></li>
+            <li><i class="fas fa-check-circle gold"></i> <span data-i18n="perk2">Réseau de professionnels et d'alumni</span></li>
+            <li><i class="fas fa-check-circle gold"></i> <span data-i18n="perk3">Développement de vos soft skills & leadership</span></li>
+            <li><i class="fas fa-check-circle gold"></i> <span data-i18n="perk4">Expériences et projets valorisables sur votre CV</span></li>
+            <li><i class="fas fa-check-circle gold"></i> <span data-i18n="perk5">Communauté soudée et bienveillante</span></li>
+            <li><i class="fas fa-check-circle gold"></i> <span data-i18n="perk6">Formations, séminaires et actions citoyennes</span></li>
           </ul>
-          <div class="join-quote">
-            <i class="fas fa-quote-left gold"></i>
-            <p>"Rejoindre l'Elite Club a été le meilleur choix de ma vie estudiantine."</p>
-            <span>— Membre fondateur</span>
-          </div>
+          <!-- Testimonial removed as per spec -->
         </div>
 
         <form class="join-form" id="joinForm" onsubmit="handleFormSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label for="firstName">Prénom *</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required />
+              <label for="firstName" data-i18n="form_first">Prénom *</label>
+              <input type="text" id="firstName" name="firstName" data-i18n-placeholder="form_first_ph" placeholder="Votre prénom" required />
             </div>
             <div class="form-group">
-              <label for="lastName">Nom *</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required />
+              <label for="lastName" data-i18n="form_last">Nom *</label>
+              <input type="text" id="lastName" name="lastName" data-i18n-placeholder="form_last_ph" placeholder="Votre nom" required />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="email">Email EMSI *</label>
+            <label for="email" data-i18n="form_email">Email EMSI *</label>
             <input type="email" id="email" name="email" placeholder="prenom.nom@emsi.ma" required />
           </div>
 
           <div class="form-group">
-            <label for="phone">Numéro WhatsApp *</label>
+            <label for="phone" data-i18n="form_phone">Numéro WhatsApp *</label>
             <input type="tel" id="phone" name="phone" placeholder="+212 6XX XXX XXX" required />
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="level">Niveau d'études *</label>
+              <label for="level" data-i18n="form_level">Niveau d'études *</label>
               <select id="level" name="level" required>
-                <option value="" disabled selected>Sélectionner...</option>
+                <option value="" disabled selected data-i18n="form_level_ph">Sélectionner...</option>
                 <option value="1A">1ère Année</option>
                 <option value="2A">2ème Année</option>
                 <option value="3A">3ème Année</option>
@@ -647,41 +609,44 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="filiere">Filière *</label>
-              <input type="text" id="filiere" name="filiere" placeholder="Ex: Génie Informatique" required />
+              <label for="filiere" data-i18n="form_filiere">Filière *</label>
+              <input type="text" id="filiere" name="filiere" data-i18n-placeholder="form_filiere_ph" placeholder="Ex: Génie Informatique" required />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="pole">Pôle d'intérêt *</label>
+            <label for="pole" data-i18n="form_pole">Pôle d'intérêt *</label>
             <select id="pole" name="pole" required>
-              <option value="" disabled selected>Choisir un pôle...</option>
-              <option value="design">Design & Médias</option>
-              <option value="logistique">Logistique & Événements</option>
+              <option value="" disabled selected data-i18n="form_pole_ph">Choisir un pôle...</option>
+              <option value="design">Design & Communication</option>
+              <option value="logistique">Événements & Logistique</option>
               <option value="softskills">Soft Skills & Leadership</option>
-              <option value="relations">Relations Externes</option>
-              <option value="tech">Tech & Innovation</option>
-              <option value="business">Business & Entrepreneuriat</option>
+              <option value="relations">Partenariats & Relations Externes</option>
+              <option value="humanitaire">Actions Humanitaires</option>
+              <option value="rh">RH & Vie Associative</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="motivation">Lettre de motivation *</label>
-            <textarea id="motivation" name="motivation" rows="4" placeholder="Pourquoi souhaitez-vous rejoindre l'Elite Club ? Quelles sont vos motivations et ce que vous pouvez apporter ?" required></textarea>
+            <label for="motivation" data-i18n="form_motiv">Lettre de motivation *</label>
+            <textarea id="motivation" name="motivation" rows="4"
+              data-i18n-placeholder="form_motiv_ph"
+              placeholder="Pourquoi souhaitez-vous rejoindre l'Elite Club ? Quelles sont vos motivations ?"
+              required></textarea>
           </div>
 
           <div class="form-group form-check">
             <input type="checkbox" id="terms" name="terms" required />
-            <label for="terms">J'accepte le règlement intérieur de l'Elite Club et m'engage à contribuer activement.</label>
+            <label for="terms" data-i18n="form_terms">J'accepte le règlement intérieur de l'Elite Club et m'engage à contribuer activement.</label>
           </div>
 
           <button type="submit" class="btn-primary btn-full">
-            <i class="fas fa-paper-plane"></i> Soumettre ma candidature
+            <i class="fas fa-paper-plane"></i> <span data-i18n="form_submit">Soumettre ma candidature</span>
           </button>
 
           <div class="form-success" id="formSuccess">
             <i class="fas fa-check-circle"></i>
-            <p>Candidature envoyée avec succès ! Nous vous contacterons très bientôt. Welcome to the Elite. ⚜</p>
+            <p data-i18n="form_success">Candidature envoyée avec succès ! Nous vous contacterons très bientôt. Welcome to the Elite. ⚜</p>
           </div>
         </form>
       </div>
@@ -694,80 +659,70 @@
   <section id="faq" class="section faq-section dark-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Questions Fréquentes</span>
+        <span class="section-tag" data-i18n="faq_tag">Questions Fréquentes</span>
         <h2 class="section-title"><span class="gold">FAQ</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">Tout ce que vous devez savoir avant de nous rejoindre.</p>
+        <p class="section-subtitle" data-i18n="faq_sub">Tout ce que vous devez savoir avant de nous rejoindre.</p>
       </div>
 
       <div class="faq-container">
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
-            <span>Qui peut rejoindre l'Elite Club ?</span>
+            <span data-i18n="faq1_q">Qui peut rejoindre l'Elite Club ?</span>
             <i class="fas fa-plus faq-icon"></i>
           </div>
           <div class="faq-answer">
-            <p>Tout étudiant régulièrement inscrit à l'EMSI CFC, quelle que soit sa filière ou son niveau d'études, peut candidater à l'Elite Club. Nous valorisons la motivation et la volonté de contribuer plus que les résultats académiques.</p>
+            <p data-i18n="faq1_a">Tout étudiant régulièrement inscrit à l'EMSI Casablanca, quelle que soit sa filière ou son niveau d'études, peut candidater à l'Elite Club. Nous valorisons la motivation et la volonté de contribuer.</p>
           </div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
-            <span>Y a-t-il des frais d'adhésion ?</span>
+            <span data-i18n="faq2_q">Y a-t-il des frais d'adhésion ?</span>
             <i class="fas fa-plus faq-icon"></i>
           </div>
           <div class="faq-answer">
-            <p>Des frais d'adhésion annuels minimes peuvent s'appliquer pour couvrir les dépenses opérationnelles du club. Ces informations vous seront communiquées lors du processus d'intégration. Des exemptions peuvent être accordées selon les situations.</p>
+            <p data-i18n="faq2_a">Des frais d'adhésion minimes peuvent s'appliquer pour couvrir les dépenses opérationnelles. Ces informations vous seront communiquées lors du processus d'intégration.</p>
           </div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
-            <span>Comment se déroule le processus de sélection ?</span>
+            <span data-i18n="faq3_q">Comment se déroule le processus de sélection ?</span>
             <i class="fas fa-plus faq-icon"></i>
           </div>
           <div class="faq-answer">
-            <p>Après soumission du formulaire en ligne, les candidats sélectionnés seront conviés à un entretien de motivation avec le bureau exécutif. Le processus dure généralement 1 à 2 semaines. Tous les candidats reçoivent une réponse.</p>
+            <p data-i18n="faq3_a">Après soumission du formulaire, les candidats sélectionnés seront conviés à un entretien de motivation avec le bureau exécutif. Le processus dure environ 1 à 2 semaines.</p>
           </div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
-            <span>Quelle est la charge de travail requise pour les membres ?</span>
+            <span data-i18n="faq4_q">Quelle est la charge de travail requise ?</span>
             <i class="fas fa-plus faq-icon"></i>
           </div>
           <div class="faq-answer">
-            <p>L'implication est flexible et adaptée à votre emploi du temps académique. En moyenne, les membres s'engagent 3 à 5 heures par semaine selon les activités en cours. Pendant les événements majeurs, l'implication peut être plus intense sur une courte période.</p>
+            <p data-i18n="faq4_a">L'implication est flexible et adaptée à votre emploi du temps académique. En moyenne, 3 à 5 heures par semaine selon les activités en cours.</p>
           </div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
-            <span>Peut-on rejoindre le club en cours d'année ?</span>
+            <span data-i18n="faq5_q">Peut-on rejoindre le club en cours d'année ?</span>
             <i class="fas fa-plus faq-icon"></i>
           </div>
           <div class="faq-answer">
-            <p>Les recrutements se font principalement en début d'année académique (septembre–octobre). Des recrutements ponctuels peuvent avoir lieu en cours d'année selon les besoins des pôles. Suivez nos réseaux sociaux pour rester informé des appels à candidatures.</p>
+            <p data-i18n="faq5_a">Les recrutements se font principalement en début d'année académique. Des recrutements ponctuels peuvent avoir lieu selon les besoins des pôles. Suivez nos réseaux pour rester informé.</p>
           </div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
-            <span>Quels bénéfices concrets vais-je tirer de mon expérience au club ?</span>
+            <span data-i18n="faq6_q">Quels bénéfices concrets vais-je tirer du club ?</span>
             <i class="fas fa-plus faq-icon"></i>
           </div>
           <div class="faq-answer">
-            <p>En rejoignant l'Elite Club, vous bénéficiez d'un réseau professionnel étendu, de formations certifiantes, d'expériences valorisables sur votre CV, de rencontres avec des professionnels et d'une communauté qui vous soutient tout au long de vos études et au-delà.</p>
-          </div>
-        </div>
-
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-question">
-            <span>Comment rester informé des événements du club ?</span>
-            <i class="fas fa-plus faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Suivez nos pages officielles sur Instagram, Facebook et TikTok pour toutes les actualités. Rejoignez également notre groupe WhatsApp communautaire pour les notifications en temps réel. Tous les liens sont disponibles dans la section Contact ci-dessous.</p>
+            <p data-i18n="faq6_a">Réseau professionnel étendu, formations certifiantes, expériences valorisables sur votre CV, rencontres avec des professionnels, et une communauté qui vous soutient tout au long de vos études.</p>
           </div>
         </div>
       </div>
@@ -780,54 +735,68 @@
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Nous Contacter</span>
-        <h2 class="section-title">Contactez-<span class="gold">nous</span></h2>
+        <span class="section-tag" data-i18n="contact_tag">Nous Contacter</span>
+        <h2 class="section-title"><span data-i18n="contact_title">Contactez-</span><span class="gold" data-i18n="contact_title_gold">nous</span></h2>
         <div class="gold-divider"></div>
-        <p class="section-subtitle">Suivez-nous et rejoignez la conversation sur toutes nos plateformes.</p>
+        <p class="section-subtitle" data-i18n="contact_sub">Suivez-nous et rejoignez la conversation sur toutes nos plateformes.</p>
       </div>
 
       <div class="contact-grid">
-        <a href="https://wa.me/212XXXXXXXXX" target="_blank" class="contact-card whatsapp">
+
+        <!-- WhatsApp — Soon -->
+        <div class="contact-card whatsapp contact-soon">
+          <div class="soon-badge" data-i18n="soon">Bientôt</div>
           <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
           <h3>WhatsApp</h3>
-          <p>Contactez-nous directement pour toute question rapide.</p>
-          <span class="contact-link">+212 6XX XXX XXX <i class="fas fa-external-link-alt"></i></span>
-        </a>
+          <p data-i18n="contact_wa">Contactez-nous directement via WhatsApp.</p>
+          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
+        </div>
 
-        <a href="https://www.instagram.com/eliteclub_emsi" target="_blank" class="contact-card instagram">
+        <!-- Instagram — Active -->
+        <a href="https://www.instagram.com/elite.club.emsi?srtk=MXdra2NrNjRhM3Jzeg=="
+           target="_blank" rel="noopener noreferrer"
+           class="contact-card instagram">
           <div class="contact-icon"><i class="fab fa-instagram"></i></div>
           <h3>Instagram</h3>
-          <p>Suivez notre quotidien, nos événements et nos coulisses.</p>
-          <span class="contact-link">@eliteclub_emsi <i class="fas fa-external-link-alt"></i></span>
+          <p data-i18n="contact_ig">Suivez notre quotidien, nos événements et nos coulisses.</p>
+          <span class="contact-link">@elite.club.emsi <i class="fas fa-external-link-alt"></i></span>
         </a>
 
-        <a href="https://www.facebook.com/eliteclub.emsi" target="_blank" class="contact-card facebook">
+        <!-- Facebook — Soon -->
+        <div class="contact-card facebook contact-soon">
+          <div class="soon-badge" data-i18n="soon">Bientôt</div>
           <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
           <h3>Facebook</h3>
-          <p>Page officielle avec toutes nos actualités et annonces.</p>
-          <span class="contact-link">Elite Club EMSI CFC <i class="fas fa-external-link-alt"></i></span>
-        </a>
+          <p data-i18n="contact_fb">Notre page officielle avec toutes nos actualités.</p>
+          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
+        </div>
 
-        <a href="https://www.tiktok.com/@eliteclub_emsi" target="_blank" class="contact-card tiktok">
+        <!-- TikTok — Soon -->
+        <div class="contact-card tiktok contact-soon">
+          <div class="soon-badge" data-i18n="soon">Bientôt</div>
           <div class="contact-icon"><i class="fab fa-tiktok"></i></div>
           <h3>TikTok</h3>
-          <p>Nos moments forts, vlogs d'événements et contenus créatifs.</p>
-          <span class="contact-link">@eliteclub_emsi <i class="fas fa-external-link-alt"></i></span>
-        </a>
+          <p data-i18n="contact_tt">Nos moments forts, vlogs d'événements et contenus créatifs.</p>
+          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
+        </div>
 
-        <a href="mailto:eliteclub@emsi.ma" class="contact-card email">
+        <!-- Email — Soon -->
+        <div class="contact-card email contact-soon">
+          <div class="soon-badge" data-i18n="soon">Bientôt</div>
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
           <h3>Email Officiel</h3>
-          <p>Pour les demandes formelles, partenariats et collaborations.</p>
-          <span class="contact-link">eliteclub@emsi.ma <i class="fas fa-external-link-alt"></i></span>
-        </a>
+          <p data-i18n="contact_mail">Pour les demandes formelles, partenariats et collaborations.</p>
+          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
+        </div>
 
+        <!-- Location -->
         <div class="contact-card location">
           <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3>Notre Adresse</h3>
-          <p>Campus EMSI CFC — Casablanca, Maroc</p>
-          <span class="contact-link">Voir sur Maps <i class="fas fa-external-link-alt"></i></span>
+          <h3 data-i18n="contact_loc_title">Notre Adresse</h3>
+          <p data-i18n="contact_loc_desc">Campus EMSI Casablanca — Casablanca, Maroc</p>
+          <span class="contact-link"><span data-i18n="contact_loc_link">Voir sur Maps</span> <i class="fas fa-external-link-alt"></i></span>
         </div>
+
       </div>
     </div>
   </section>
@@ -839,51 +808,74 @@
     <div class="footer-container">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="images/logo.png" alt="Elite Club Logo" class="logo-img">
+          <span class="logo-icon">⚜</span>
+          <span class="logo-text">Elite<span class="gold">Club</span></span>
         </div>
-        <p class="footer-tagline">"You're not just a club member, you're an ELITE."</p>
-        <p class="footer-school">Club Officiel — EMSI CFC</p>
+        <p class="footer-tagline">"Your first day with us will never be the last"</p>
+        <p class="footer-school" data-i18n="footer_school">Club Officiel — EMSI Casablanca</p>
       </div>
 
       <div class="footer-links">
-        <h4>Navigation</h4>
+        <h4 data-i18n="footer_nav">Navigation</h4>
         <ul>
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#about">À Propos</a></li>
-          <li><a href="#poles">Nos Pôles</a></li>
-          <li><a href="#events">Événements</a></li>
-          <li><a href="#achievements">Réalisations</a></li>
+          <li><a href="#home"         data-i18n="nav_home">Accueil</a></li>
+          <li><a href="#about"        data-i18n="nav_about">À Propos</a></li>
+          <li><a href="#poles"        data-i18n="nav_poles">Nos Pôles</a></li>
+          <li><a href="#events"       data-i18n="nav_events">Événements</a></li>
+          <li><a href="#achievements" data-i18n="nav_ach">Réalisations</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
-        <h4>Club</h4>
+        <h4 data-i18n="footer_club">Club</h4>
         <ul>
-          <li><a href="#board">Bureau Exécutif</a></li>
-          <li><a href="#partners">Partenaires</a></li>
-          <li><a href="#join">Rejoindre</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#board"    data-i18n="nav_board">Bureau Exécutif</a></li>
+          <li><a href="#partners" data-i18n="nav_partners">Partenaires</a></li>
+          <li><a href="#join"     data-i18n="nav_join">Rejoindre</a></li>
+          <li><a href="#faq"      data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-social">
-        <h4>Suivez-nous</h4>
+        <h4 data-i18n="footer_follow">Suivez-nous</h4>
         <div class="social-icons">
-          <a href="https://wa.me/212XXXXXXXXX" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/eliteclub_emsi" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/eliteclub.emsi" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.tiktok.com/@eliteclub_emsi" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="mailto:eliteclub@emsi.ma" title="Email"><i class="fas fa-envelope"></i></a>
+          <!-- WhatsApp — Soon -->
+          <div class="social-icon-wrap">
+            <span class="social-soon-tip" data-i18n="soon">Bientôt</span>
+            <span class="social-icon-btn disabled" aria-label="WhatsApp bientôt disponible">
+              <i class="fab fa-whatsapp"></i>
+            </span>
+          </div>
+          <!-- Instagram — Active -->
+          <a href="https://www.instagram.com/elite.club.emsi?srtk=MXdra2NrNjRhM3Jzeg=="
+             target="_blank" rel="noopener noreferrer"
+             class="social-icon-btn active" aria-label="Instagram Elite Club">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <!-- Facebook — Soon -->
+          <div class="social-icon-wrap">
+            <span class="social-soon-tip" data-i18n="soon">Bientôt</span>
+            <span class="social-icon-btn disabled" aria-label="Facebook bientôt disponible">
+              <i class="fab fa-facebook-f"></i>
+            </span>
+          </div>
+          <!-- TikTok — Soon -->
+          <div class="social-icon-wrap">
+            <span class="social-soon-tip" data-i18n="soon">Bientôt</span>
+            <span class="social-icon-btn disabled" aria-label="TikTok bientôt disponible">
+              <i class="fab fa-tiktok"></i>
+            </span>
+          </div>
         </div>
-        <p class="footer-cta-text">Rejoignez la communauté !</p>
-        <button class="btn-primary btn-sm" onclick="scrollToSection('join')">Candidater maintenant</button>
+        <p class="footer-cta-text" data-i18n="footer_cta_text">Rejoignez la communauté !</p>
+        <button class="btn-primary btn-sm" onclick="scrollToSection('join')" data-i18n="footer_cta_btn">Candidater maintenant</button>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div class="gold-divider footer-gold-line"></div>
-      <p>© 2026 <span class="gold">Elite Club</span> — EMSI CFC. Tous droits réservés.</p>
+      <p>© <span id="footerYear"></span> <span class="gold">Elite Club</span> — EMSI Casablanca. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
     </div>
   </footer>
 
