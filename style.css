@@ -236,16 +236,10 @@ a {
   flex-shrink: 0;
 }
 
-.logo-icon {
-  color: var(--gold);
-  font-size: 1.4rem;
-}
-
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--off-white);
+.logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -397,11 +391,15 @@ a {
 }
 
 .hero-logo-symbol {
-  font-size: 4rem;
-  color: var(--gold);
   margin-bottom: 8px;
   animation: fadeInDown 0.9s ease 0.1s both;
-  text-shadow: 0 0 40px rgba(212,175,55,0.5);
+}
+
+.hero-logo-img {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 40px rgba(212,175,55,0.5));
 }
 
 .hero-title {

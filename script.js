@@ -122,19 +122,50 @@ function handleFormSubmit(e) {
   const btn     = form.querySelector('.btn-primary');
   const success = document.getElementById('formSuccess');
 
-  // Simulate sending
+  // Extract form data
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName  = document.getElementById('lastName').value.trim();
+  const email     = document.getElementById('email').value.trim();
+  const phone     = document.getElementById('phone').value.trim();
+  const level     = document.getElementById('level').value;
+  const filiere   = document.getElementById('filiere').value.trim();
+  const pole      = document.getElementById('pole').value;
+  const motivation= document.getElementById('motivation').value.trim();
+
+  // Format WhatsApp message
+  const whatsappMessage = `*Nouvelle Candidature - Elite Club* ⚜️
+
+👤 *Nom & Prénom:* ${lastName} ${firstName}
+✉️ *Email:* ${email}
+📞 *Téléphone:* ${phone}
+
+🎓 *Niveau d'études:* ${level}
+📚 *Filière:* ${filiere}
+
+🎯 *Pôle souhaité:* ${pole}
+
+💬 *Motivations:*
+${motivation}`;
+
+  // WhatsApp number (Moroccan format +212)
+  const targetPhone = "212711664755";
+  const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // UI Feedback
   btn.disabled = true;
   const isEn = document.body.classList.contains('lang-en');
   btn.innerHTML = isEn 
-    ? '<i class="fas fa-spinner fa-spin"></i> Sending...'
-    : '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+    ? '<i class="fas fa-spinner fa-spin"></i> Redirecting to WhatsApp...'
+    : '<i class="fas fa-spinner fa-spin"></i> Redirection vers WhatsApp...';
 
+  // Open WhatsApp in a new tab & show success message
   setTimeout(() => {
+    window.open(whatsappUrl, '_blank');
     btn.style.display = 'none';
     success.classList.add('show');
     form.reset();
     success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 1800);
+  }, 1000);
 }
 
 // ============================================================
