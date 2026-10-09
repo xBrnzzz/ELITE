@@ -1721,7 +1721,39 @@ a {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-visual { position: static; }
 
-  .poles-grid { grid-template-columns: 1fr; }
+  /* Make sections horizontally swipeable instead of stacking */
+  .poles-grid,
+  .board-grid,
+  .contact-grid { 
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 24px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Ensure cards have a fixed width for the carousel effect */
+  .pole-card,
+  .board-card,
+  .contact-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  /* Hide scrollbars for a cleaner look */
+  .poles-grid::-webkit-scrollbar,
+  .board-grid::-webkit-scrollbar,
+  .contact-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .poles-grid, .board-grid, .contact-grid {
+    scrollbar-width: none;
+  }
 
   .events-grid { grid-template-columns: 1fr; }
   .event-card.featured { grid-column: 1; }
@@ -1739,11 +1771,12 @@ a {
 
   .achievements-numbers { grid-template-columns: repeat(2, 1fr); }
 
-  .board-grid { grid-template-columns: 1fr; }
-  .board-card.president { flex-direction: column; text-align: center; }
+  .board-card.president { 
+    flex-direction: column; 
+    text-align: center; 
+    flex: 0 0 85%; /* Make president card match width */
+  }
   .president .board-socials { justify-content: center; }
-
-  .contact-grid { grid-template-columns: repeat(2, 1fr); }
 
   .join-wrapper { grid-template-columns: 1fr; }
 
@@ -1769,7 +1802,6 @@ a {
    RESPONSIVE — SMALL MOBILE (≤ 480px)
 ============================================================ */
 @media (max-width: 480px) {
-  .contact-grid { grid-template-columns: 1fr; }
   .partners-logos-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-buttons { flex-direction: column; align-items: center; }
 
