@@ -1310,6 +1310,7 @@ a {
   color: var(--text-muted);
   font-weight: 400;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .form-success {

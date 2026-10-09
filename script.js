@@ -158,14 +158,16 @@ ${motivation}`;
     ? '<i class="fas fa-spinner fa-spin"></i> Redirecting to WhatsApp...'
     : '<i class="fas fa-spinner fa-spin"></i> Redirection vers WhatsApp...';
 
-  // Open WhatsApp in a new tab & show success message
+  // Open WhatsApp synchronously to prevent popup blocker
+  window.open(whatsappUrl, '_blank');
+
+  // Update UI and reset form
   setTimeout(() => {
-    window.open(whatsappUrl, '_blank');
     btn.style.display = 'none';
     success.classList.add('show');
     form.reset();
     success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 1000);
+  }, 500);
 }
 
 // ============================================================
