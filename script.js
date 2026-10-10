@@ -148,7 +148,7 @@ function handleFormSubmit(e) {
 ${motivation}`;
 
   // WhatsApp number (Moroccan format +212)
-  const targetPhone = "212711664755";
+  const targetPhone = "212700956246";
   const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // UI Feedback
@@ -186,7 +186,7 @@ function handleQuestionSubmit(e) {
 
   const whatsappMessage = `*Question - Elite Club* ⚜️\n\n👤 *Nom & Prénom:* ${nom} ${prenom}\n\n💬 *Question:*\n${message}`;
 
-  const targetPhone = "212711664755";
+  const targetPhone = "212700956246";
   const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
   btn.disabled = true;
@@ -357,7 +357,7 @@ const translations = {
     nav_cta: "Rejoindre le Club",
     hero_subtitle: "Un espace d'excellence, de croissance et d'appartenance pour les étudiants de l'EMSI Casablanca. Rejoignez une communauté qui transforme des ambitions en réalisations.",
     hero_cta: "Rejoindre le Club",
-    hero_discover: "Découvrir",
+    hero_discover: "Communauté WhatsApp",
     hero_scroll: "Défiler",
     about_tag: "Qui sommes-nous",
     about_title: "À",
@@ -508,7 +508,7 @@ const translations = {
     nav_cta: "Join the Club",
     hero_subtitle: "A space of excellence, growth, and belonging for EMSI Casablanca students. Join a community that turns ambitions into achievements.",
     hero_cta: "Join the Club",
-    hero_discover: "Discover",
+    hero_discover: "WhatsApp Community",
     hero_scroll: "Scroll",
     about_tag: "Who we are",
     about_title: "About",

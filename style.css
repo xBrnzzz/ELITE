@@ -190,6 +190,21 @@ a {
   transform: translateY(-2px);
 }
 
+.btn-whatsapp-hero i {
+  font-size: 1.15rem;
+  color: #25D366;
+  transition: var(--transition);
+}
+
+.btn-whatsapp-hero:hover {
+  border-color: #25D366;
+  color: #ffffff;
+}
+
+.btn-whatsapp-hero:hover i {
+  transform: scale(1.15);
+}
+
 .btn-full { width: 100%; justify-content: center; }
 
 .btn-sm {
