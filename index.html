@@ -368,7 +368,7 @@
             <div class="board-badge-role">Part.</div>
           </div>
           <div class="board-info">
-            <h3>Mchater & Marwan</h3>
+            <h3>M.Mchater & M.Marwan</h3>
             <p class="board-role">Partenariats & Ext.</p>
             <p class="board-dept" data-i18n="board_part_dept">Relations Extérieures & Partenariats</p>
             <div class="board-socials">
@@ -384,7 +384,7 @@
             <div class="board-badge-role">Évén.</div>
           </div>
           <div class="board-info">
-            <h3>Badssi & Ikrame</h3>
+            <h3>B.Badssi & I.Ikrame</h3>
             <p class="board-role">Événements & Logistique</p>
             <p class="board-dept" data-i18n="board_event_dept">Organisation & Coordination Événementielle</p>
             <div class="board-socials">
@@ -449,7 +449,7 @@
             <div class="board-badge-role">RH</div>
           </div>
           <div class="board-info">
-            <h3>Aboulhilal & Mensour</h3>
+            <h3>A.Aboulhilal & M.Mensour</h3>
             <p class="board-role">RH & Vie Associative</p>
             <p class="board-dept" data-i18n="board_rh_dept">Gestion des Membres & Animation Interne</p>
             <div class="board-socials">
@@ -582,81 +582,46 @@
           <!-- Testimonial removed as per spec -->
         </div>
 
-        <form class="join-form" id="joinForm" onsubmit="handleFormSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName" data-i18n="form_first">Prénom *</label>
-              <input type="text" id="firstName" name="firstName" data-i18n-placeholder="form_first_ph" placeholder="Votre prénom" required />
+        <div class="join-form" id="joinFormWrap">
+
+          <!-- Google Form CTA -->
+          <div class="google-form-cta">
+            <div class="gform-icon"><i class="fas fa-file-alt"></i></div>
+            <h3>Formulaire de candidature</h3>
+            <p>Remplissez notre formulaire officiel pour soumettre votre candidature.</p>
+            <a href="https://forms.gle/Q3rBaUDr6zynqSqN8" target="_blank" rel="noopener noreferrer" class="btn-primary btn-full">
+              <i class="fas fa-external-link-alt"></i> Acc&eacute;der au formulaire
+            </a>
+          </div>
+
+          <div class="gold-divider" style="margin: 32px 0;"></div>
+
+          <h4 class="contact-form-title"><i class="fas fa-question-circle gold"></i> Une question ?</h4>
+          <form id="contactQuestionForm" onsubmit="handleQuestionSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="qNom">Nom *</label>
+                <input type="text" id="qNom" name="nom" placeholder="Votre nom" required />
+              </div>
+              <div class="form-group">
+                <label for="qPrenom">Pr&eacute;nom *</label>
+                <input type="text" id="qPrenom" name="prenom" placeholder="Votre pr&eacute;nom" required />
+              </div>
             </div>
             <div class="form-group">
-              <label for="lastName" data-i18n="form_last">Nom *</label>
-              <input type="text" id="lastName" name="lastName" data-i18n-placeholder="form_last_ph" placeholder="Votre nom" required />
+              <label for="qMessage">Message *</label>
+              <textarea id="qMessage" name="message" rows="4" placeholder="Votre question..." required></textarea>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email" data-i18n="form_email">Email EMSI *</label>
-            <input type="email" id="email" name="email" placeholder="prenom.nom@emsi.ma" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone" data-i18n="form_phone">Numéro WhatsApp *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+212 6XX XXX XXX" required />
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="level" data-i18n="form_level">Niveau d'études *</label>
-              <select id="level" name="level" required>
-                <option value="" disabled selected data-i18n="form_level_ph">Sélectionner...</option>
-                <option value="1A">1ère Année</option>
-                <option value="2A">2ème Année</option>
-                <option value="3A">3ème Année</option>
-                <option value="4A">4ème Année</option>
-                <option value="5A">5ème Année</option>
-              </select>
+            <button type="submit" class="btn-primary btn-full">
+              <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
+            </button>
+            <div class="form-success" id="questionSuccess">
+              <i class="fas fa-check-circle"></i>
+              <p>Message envoy&eacute; !</p>
             </div>
-            <div class="form-group">
-              <label for="filiere" data-i18n="form_filiere">Filière *</label>
-              <input type="text" id="filiere" name="filiere" data-i18n-placeholder="form_filiere_ph" placeholder="Ex: Génie Informatique" required />
-            </div>
-          </div>
+          </form>
 
-          <div class="form-group">
-            <label for="pole" data-i18n="form_pole">Pôle d'intérêt *</label>
-            <select id="pole" name="pole" required>
-              <option value="" disabled selected data-i18n="form_pole_ph">Choisir un pôle...</option>
-              <option value="design">Design & Communication</option>
-              <option value="logistique">Événements & Logistique</option>
-              <option value="softskills">Soft Skills & Leadership</option>
-              <option value="relations">Partenariats & Relations Externes</option>
-              <option value="humanitaire">Actions Humanitaires</option>
-              <option value="rh">RH & Vie Associative</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="motivation" data-i18n="form_motiv">Lettre de motivation *</label>
-            <textarea id="motivation" name="motivation" rows="4"
-              data-i18n-placeholder="form_motiv_ph"
-              placeholder="Pourquoi souhaitez-vous rejoindre l'Elite Club ? Quelles sont vos motivations ?"
-              required></textarea>
-          </div>
-
-          <div class="form-group form-check">
-            <input type="checkbox" id="terms" name="terms" required />
-            <label for="terms" data-i18n="form_terms">J'accepte le règlement intérieur de l'Elite Club et m'engage à contribuer activement.</label>
-          </div>
-
-          <button type="submit" class="btn-primary btn-full">
-            <i class="fas fa-paper-plane"></i> <span data-i18n="form_submit">Soumettre ma candidature</span>
-          </button>
-
-          <div class="form-success" id="formSuccess">
-            <i class="fas fa-check-circle"></i>
-            <p data-i18n="form_success">Candidature envoyée avec succès ! Nous vous contacterons très bientôt. Welcome to the Elite. ⚜</p>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -751,14 +716,13 @@
 
       <div class="contact-grid">
 
-        <!-- WhatsApp — Soon -->
-        <div class="contact-card whatsapp contact-soon">
-          <div class="soon-badge" data-i18n="soon">Bientôt</div>
+                <!-- WhatsApp Community — Active -->
+        <a href="https://chat.whatsapp.com/GPDOadYJOM68iZDYe6LDDL" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp">
           <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
           <h3>WhatsApp</h3>
-          <p data-i18n="contact_wa">Contactez-nous directement via WhatsApp.</p>
-          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
-        </div>
+          <p>Rejoignez notre communauté WhatsApp officielle.</p>
+          <span class="contact-link">Rejoindre la communauté <i class="fas fa-external-link-alt"></i></span>
+        </a>
 
         <!-- Instagram — Active -->
         <a href="https://www.instagram.com/elite.club.emsi?srtk=MXdra2NrNjRhM3Jzeg=="
@@ -779,30 +743,28 @@
           <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
         </div>
 
-        <!-- TikTok — Soon -->
-        <div class="contact-card tiktok contact-soon">
-          <div class="soon-badge" data-i18n="soon">Bientôt</div>
+                <!-- TikTok — Active -->
+        <a href="https://www.tiktok.com/@eliteclubemsi?_r=1&_t=ZS-9AR6zkHmp50" target="_blank" rel="noopener noreferrer" class="contact-card tiktok">
           <div class="contact-icon"><i class="fab fa-tiktok"></i></div>
           <h3>TikTok</h3>
-          <p data-i18n="contact_tt">Nos moments forts, vlogs d'événements et contenus créatifs.</p>
-          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
-        </div>
+          <p>Nos moments forts, vlogs et contenus créatifs.</p>
+          <span class="contact-link">@eliteclubemsi <i class="fas fa-external-link-alt"></i></span>
+        </a>
 
-        <!-- Email — Soon -->
-        <div class="contact-card email contact-soon">
-          <div class="soon-badge" data-i18n="soon">Bientôt</div>
+                <!-- Email — Active -->
+        <a href="mailto:emsieliteclub@gmail.com" class="contact-card email">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
           <h3>Email Officiel</h3>
-          <p data-i18n="contact_mail">Pour les demandes formelles, partenariats et collaborations.</p>
-          <span class="contact-link contact-link--soon" data-i18n="coming_soon">Disponible bientôt</span>
-        </div>
+          <p>Pour les demandes formelles, partenariats et collaborations.</p>
+          <span class="contact-link">emsieliteclub@gmail.com <i class="fas fa-external-link-alt"></i></span>
+        </a>
 
         <!-- Location -->
         <div class="contact-card location">
           <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
           <h3 data-i18n="contact_loc_title">Notre Adresse</h3>
           <p data-i18n="contact_loc_desc">Campus EMSI Anfa — Casablanca, Maroc</p>
-          <span class="contact-link"><span data-i18n="contact_loc_link">Voir sur Maps</span> <i class="fas fa-external-link-alt"></i></span>
+          <a href="https://share.google/KhDhGMQUtAEH23euw" target="_blank" class="contact-link">Voir sur Maps <i class="fas fa-external-link-alt"></i></a>
         </div>
 
       </div>
@@ -847,13 +809,12 @@
       <div class="footer-social">
         <h4 data-i18n="footer_follow">Suivez-nous</h4>
         <div class="social-icons">
-          <!-- WhatsApp — Soon -->
-          <div class="social-icon-wrap">
-            <span class="social-soon-tip" data-i18n="soon">Bientôt</span>
-            <span class="social-icon-btn disabled" aria-label="WhatsApp bientôt disponible">
-              <i class="fab fa-whatsapp"></i>
-            </span>
-          </div>
+          <!-- WhatsApp — Active -->
+          <a href="https://chat.whatsapp.com/GPDOadYJOM68iZDYe6LDDL"
+             target="_blank" rel="noopener noreferrer"
+             class="social-icon-btn active" aria-label="WhatsApp Elite Club">
+            <i class="fab fa-whatsapp"></i>
+          </a>
           <!-- Instagram — Active -->
           <a href="https://www.instagram.com/elite.club.emsi?srtk=MXdra2NrNjRhM3Jzeg=="
              target="_blank" rel="noopener noreferrer"
@@ -867,13 +828,12 @@
               <i class="fab fa-facebook-f"></i>
             </span>
           </div>
-          <!-- TikTok — Soon -->
-          <div class="social-icon-wrap">
-            <span class="social-soon-tip" data-i18n="soon">Bientôt</span>
-            <span class="social-icon-btn disabled" aria-label="TikTok bientôt disponible">
-              <i class="fab fa-tiktok"></i>
-            </span>
-          </div>
+          <!-- TikTok — Active -->
+          <a href="https://www.tiktok.com/@eliteclubemsi?_r=1&_t=ZS-9AR6zkHmp50"
+             target="_blank" rel="noopener noreferrer"
+             class="social-icon-btn active" aria-label="TikTok Elite Club">
+            <i class="fab fa-tiktok"></i>
+          </a>
         </div>
         <p class="footer-cta-text" data-i18n="footer_cta_text">Rejoignez la communauté !</p>
         <button class="btn-primary btn-sm" onclick="scrollToSection('join')" data-i18n="footer_cta_btn">Candidater maintenant</button>

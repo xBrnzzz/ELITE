@@ -245,21 +245,22 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text-muted);
-  padding: 8px 12px;
+  padding: 6px 8px;
   border-radius: 6px;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -1222,6 +1223,40 @@ a {
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-dark);
+}
+
+.google-form-cta {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.gform-icon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.google-form-cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--off-white);
+  margin-bottom: 10px;
+}
+
+.google-form-cta p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.contact-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--off-white);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .form-row {

@@ -171,6 +171,38 @@ ${motivation}`;
 }
 
 // ============================================================
+// QUESTION FORM SUBMIT
+// ============================================================
+function handleQuestionSubmit(e) {
+  e.preventDefault();
+
+  const form    = document.getElementById('contactQuestionForm');
+  const btn     = form.querySelector('.btn-primary');
+  const success = document.getElementById('questionSuccess');
+
+  const nom     = document.getElementById('qNom').value.trim();
+  const prenom  = document.getElementById('qPrenom').value.trim();
+  const message = document.getElementById('qMessage').value.trim();
+
+  const whatsappMessage = `*Question - Elite Club* ⚜️\n\n👤 *Nom & Prénom:* ${nom} ${prenom}\n\n💬 *Question:*\n${message}`;
+
+  const targetPhone = "212711664755";
+  const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirection vers WhatsApp...';
+
+  window.open(whatsappUrl, '_blank');
+
+  setTimeout(() => {
+    btn.style.display = 'none';
+    success.classList.add('show');
+    form.reset();
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 500);
+}
+
+// ============================================================
 // FLOATING PARTICLES (Hero Section)
 // ============================================================
 function createParticles() {
